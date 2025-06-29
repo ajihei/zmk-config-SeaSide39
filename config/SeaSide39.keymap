@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include "keycode_japanese.h"
 
 #define MOUSE 4
 #define SCROLL 5
@@ -9,12 +10,7 @@
 
 &mt {
     flavor = "balanced";
-    quick-tap-ms = <300>;
-};
-
-&lt {
-    flavor = "balanced";
-    quick-tap-ms = <300>;
+    quick-tap-ms = <180>;
 };
 
 / {
@@ -44,11 +40,11 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            bindings = <
-&kp Q             &kp W      &kp E         &kp R             &kp T                                                &kp Y            &kp U  &lt 5 I   &kp O     &lt 6 P
-&kp A             &kp S      &kp D         &kp F             &kp G                                                &kp H            &kp J  &kp K     &kp L     &kp ENTER
-&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V             &kp B                                                &kp N            &kp M  &mkp MB1  &mkp MB3  &mkp MB2
-&kp LEFT_SHIFT    &kp LCTRL  &kp LEFT_ALT  &mt LEFT_WIN TAB  &lt 1 SPACE  &lt 2 LANG2      &mt RIGHT_SHIFT LANG1  &lt 3 BACKSPACE                             &lt 5 ESCAPE
+            bindings = 
+&kp Q           &kp W                   &kp E         &kp R          &kp T                                                          &kp Y            &kp U        &kp I           &kp O         &kp P
+&mt LSHIFT A    &mt LGUI S              &mt LALT D    &mt LCTRL F    &kp G                                                          &kp H            &mt RCTRL J  &mt RALT K      &mt RGUI L    &mt RSHIFT BACKSPACE
+&kp Z           &kp X                   &kp C         &kp V          &kp B          　　　　　　　　　　　　　　　　                 　&kp N            &kp M        &kp JP_COMMA    &kp JP_DOT    &kp JP_AT
+&kp ESCAPE      &none                   &none         &kp TAB        &lt 2 SPACE         &kp JP_EISU               &lt 4 JP_KANA    &lt 3 ENTER                                &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
