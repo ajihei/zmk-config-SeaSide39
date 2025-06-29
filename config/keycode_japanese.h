@@ -1,4 +1,4 @@
-j#define JP_ZKHK  GRAVE        // Zenkaku ↔ Hankaku ↔ Kanji (半角 ↔ 全角 ↔ 漢字)
+#define JP_ZKHK  GRAVE        // Zenkaku ↔ Hankaku ↔ Kanji (半角 ↔ 全角 ↔ 漢字)
 #define JP_MINUS MINUS        // -
 #define JP_CARET EQUAL        // ^
 #define JP_YEN   INT3         // ¥
