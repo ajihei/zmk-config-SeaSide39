@@ -16,12 +16,13 @@
             ;
 };
 
+/* 非マウスキーを押したらタイムアウトに関係なくマウスレイヤーを抜ける設定の有効化 */
 &zip_temp_layer {
     excluded-positions = <
         11 // S
         13 // F
     >;
-    require-prior-idle-ms = <200>;
+    require-prior-idle-ms = <200>; // キー入力中のオートマウスレイヤー誤爆防止
 };
 
 /* Trackball のリスナー */ 
@@ -30,7 +31,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        input-processors = <&zip_temp_layer 1 800>;
+        input-processors = <&zip_temp_layer 1 800>; // Input Processorを使用したオートマウスレイヤーを有効化
     };
 };
 
