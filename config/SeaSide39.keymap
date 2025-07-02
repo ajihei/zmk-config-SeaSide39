@@ -24,6 +24,7 @@
             label = "TO_LAYER_0";
         };
 
+        // ２．AMLを解除するマクロexit_AMLを作る
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -33,6 +34,7 @@
             label = "exit_AML";
         };
 
+        // ３．キー押下後にAMLを解除するマクロkp_exit_AMLを作る
         kp_exit_AML: kp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -53,6 +55,8 @@
             tapping-term-ms = <200>;
         };
 
+        // Shift+クリックの動作改善
+        // １．レイヤーを無効化するbehavior tog_off を定義する
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -60,6 +64,8 @@
             toggle-mode = "off";
         };
 
+        // ４．ホールド時はkp、タップ時はkp_exit_AMLを使うhold-tap behavior mt_exit_AML_on_tapを定義する
+        // ５．mt_exit_AML_on_tapをmtの代わりに使う
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_exit_AML_ON_TAP";
@@ -86,10 +92,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans    &trans  &trans    &trans                      &trans  &trans  &trans  &trans  &trans
-&mt_exit_AML_on_tap LSHIFT A  &mkp MB1  &mt_exit_AML_on_tap LALT D  &mkp MB2  &trans                                          &trans        &mt_exit_AML_on_tap RCTRL J  &mt RALT K    &mt RGUI L  &mt_exit_AML_on_tap RSHIFT BACKSPACE
-&trans  &trans    &trans  &trans    &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans    &trans  &trans    &trans  &trans      &trans  &trans                          &trans
+&trans                        &trans    &trans                      &trans    &trans                      &trans  &trans                       &trans        &trans      &trans
+&mt_exit_AML_on_tap LSHIFT A  &mkp MB1  &mt_exit_AML_on_tap LALT D  &mkp MB2  &trans                      &trans  &mt_exit_AML_on_tap RCTRL J  &mt RALT K    &mt RGUI L  &mt_exit_AML_on_tap RSHIFT BACKSPACE
+&trans                        &trans    &trans                      &trans    &trans                      &trans  &trans                       &trans        &trans      &trans
+&trans                        &trans    &trans                      &trans    &trans  &trans      &trans  &trans                                                         &trans
             >;
         };
 
