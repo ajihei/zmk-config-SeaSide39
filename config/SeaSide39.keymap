@@ -1,8 +1,8 @@
+#include "keycode_japanese.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include "keycode_japanese.h"
 
 // #define MOUSE 4
 // #define SCROLL 5
@@ -14,7 +14,14 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        test {
+            bindings = <&kp A>;
+            key-positions = <11 13>;
+        };
+    };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -41,52 +48,50 @@
 
         default_layer {
             bindings = <
-&kp Q           &kp W         &kp E         &kp R          &kp T                                             &kp Y            &kp U        &kp I           &kp O         &kp P
-&mt LSHIFT A    &mt LGUI S    &mt LALT D    &mt LCTRL F    &kp G                                             &kp H            &mt RCTRL J  &mt RALT K      &mt RGUI L    &mt RSHIFT BACKSPACE
-&kp Z           &kp X         &kp C         &kp V          &kp B                                             &kp N            &kp M        &kp JP_COMMA    &kp JP_DOT    &kp JP_AT
-&mkp MB4        &mkp MB5      &mkp MB3      &kp TAB        &lt 2 SPACE      &lt 6 JP_EISU     &lt 4 JP_KANA    &lt 3 ENTER                                                 &kp K_APPLICATION
+&kp Q         &kp W       &kp E       &kp R        &kp T                                          &kp Y        &kp U        &kp I         &kp O       &kp P
+&mt LSHIFT A  &mt LGUI S  &mt LALT D  &mt LCTRL F  &kp G                                          &kp H        &mt RCTRL J  &mt RALT K    &mt RGUI L  &mt RSHIFT BACKSPACE
+&kp Z         &kp X       &kp C       &kp V        &kp B                                          &kp N        &kp M        &kp JP_COMMA  &kp JP_DOT  &kp JP_AT
+&mkp MB4      &mkp MB5    &mkp MB3    &kp TAB      &lt 2 SPACE  &lt 6 JP_EISU      &lt 4 JP_KANA  &lt 3 ENTER                                         &kp K_APPLICATION
             >;
         };
 
-
         MOUSE {
             bindings = <
-&trans           &trans       &trans         &trans          &trans                                      &trans        &trans        &trans          &trans         &trans
-&trans           &mkp MB1     &trans         &mkp MB2        &trans                                      &trans        &trans        &trans          &trans         &trans
-&trans           &trans       &trans         &trans          &trans                                      &trans        &trans        &trans          &trans         &trans
-&trans           &trans       &trans         &trans          &trans         &trans          &trans       &trans                                                     &trans
+&trans  &trans    &trans  &trans    &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &mkp MB1  &trans  &mkp MB2  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans  &trans    &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans  &trans    &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
         SYMBOL {
             bindings = <
-&kp ESCAPE       &none        &none         &kp JP_TILDE  &kp JP_CARET                                    &kp K_APPLICATION  &kp JP_LBKT   &kp JP_RBKT           &kp JP_LBRC           &kp JP_RBRC
-&kp LSHIFT       &kp LGUI     &kp LALT      &kp LCTRL     &none                                           &kp LEFT           &kp DOWN      &kp UP                &kp RIGHT             &kp DEL
-&none            &none        &none         &none         &none                                           &kp HOME           &kp PG_DN     &kp PG_UP             &kp END               &none
-&trans           &trans       &trans        &trans        &trans        &trans            &trans          &trans                                                                       &trans
+&kp ESCAPE  &none     &none     &kp JP_TILDE  &kp JP_CARET                      &kp K_APPLICATION  &kp JP_LBKT  &kp JP_RBKT  &kp JP_LBRC  &kp JP_RBRC
+&kp LSHIFT  &kp LGUI  &kp LALT  &kp LCTRL     &none                             &kp LEFT           &kp DOWN     &kp UP       &kp RIGHT    &kp DEL
+&none       &none     &none     &none         &none                             &kp HOME           &kp PG_DN    &kp PG_UP    &kp END      &none
+&trans      &trans    &trans    &trans        &trans        &trans      &trans  &trans                                                    &trans
             >;
         };
 
         NUM {
             bindings = <
-&kp LS(N1)       &kp LS(N2)     &kp LS(N3)         &kp LS(N4)       &kp LS(N5)                                                &kp LS(N6)     &kp LS(N7)       &kp LS(N8)      &kp LS(N9)       &kp JP_BSLH 
-&mt LSHIFT N1    &mt LGUI N2    &mt LALT N3        &mt LCTRL N4     &kp N5                                                    &kp N6         &mt LCTRL N7     &mt LALT N8     &mt LGUI N9      &mt LSHIFT N0
-&kp JP_PLUS      &kp JP_MINUS   &kp JP_ASTRK       &kp JP_SLASH     &kp JP_EQUAL                                              &kp JP_PIPE    &kp JP_SEMI      &kp JP_COLON    &kp JP_QMARK     &kp JP_UNDER
-&trans           &trans         &trans             &trans           &trans          &trans             &trans                 &trans                                                           &trans
+&kp LS(N1)     &kp LS(N2)    &kp LS(N3)    &kp LS(N4)    &kp LS(N5)                        &kp LS(N6)   &kp LS(N7)    &kp LS(N8)    &kp LS(N9)    &kp JP_BSLH
+&mt LSHIFT N1  &mt LGUI N2   &mt LALT N3   &mt LCTRL N4  &kp N5                            &kp N6       &mt LCTRL N7  &mt LALT N8   &mt LGUI N9   &mt LSHIFT N0
+&kp JP_PLUS    &kp JP_MINUS  &kp JP_ASTRK  &kp JP_SLASH  &kp JP_EQUAL                      &kp JP_PIPE  &kp JP_SEMI   &kp JP_COLON  &kp JP_QMARK  &kp JP_UNDER
+&trans         &trans        &trans        &trans        &trans        &trans      &trans  &trans                                                 &trans
             >;
         };
 
         ARROW {
             bindings = <
-&kp F1           &kp F2         &kp F3             &kp F4           &kp F5                                                    &none           &none      &none                 &none                 &none
-&mt LSHIFT F6    &mt LGUI F7    &mt LALT F8        &mt LCTRL F9     &kp F10                                                   &none           &none      &none                 &none                 &kp C_VOL_UP
-&kp F11          &kp F12        &none              &none            &none                                                     &none           &none      &none                 &none                 &kp C_VOL_DN
-&trans           &trans         &trans             &trans           &trans          &trans             &trans                 &trans                                                                 &trans
+&kp F1         &kp F2       &kp F3       &kp F4        &kp F5                       &none   &none  &none  &none  &none
+&mt LSHIFT F6  &mt LGUI F7  &mt LALT F8  &mt LCTRL F9  &kp F10                      &none   &none  &none  &none  &kp C_VOL_UP
+&kp F11        &kp F12      &none        &none         &none                        &none   &none  &none  &none  &kp C_VOL_DN
+&trans         &trans       &trans       &trans        &trans   &trans      &trans  &trans                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
-
 
         SCROLL {
             bindings = <
