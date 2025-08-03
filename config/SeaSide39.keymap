@@ -92,10 +92,10 @@
 
         MOUSE {
             bindings = <
-&trans                        &trans    &trans                      &trans    &trans                      &trans  &trans                       &trans        &trans      &trans
-&mt_exit_AML_on_tap LSHIFT A  &mkp MB1  &mt_exit_AML_on_tap LALT D  &mkp MB2  &trans                      &trans  &mt_exit_AML_on_tap RCTRL J  &mt RALT K    &mt RGUI L  &mt_exit_AML_on_tap RSHIFT BACKSPACE
-&trans                        &trans    &trans                      &trans    &trans                      &trans  &trans                       &trans        &trans      &trans
-&trans                        &trans    &trans                      &trans    &trans  &trans      &trans  &trans                                                         &trans
+&trans                        &trans    &trans                      &trans    &trans                      &trans  &trans                       &trans                        &trans                     &trans
+&mt_exit_AML_on_tap LSHIFT A  &mkp MB1  &mt_exit_AML_on_tap LALT D  &mkp MB2  &trans                      &trans  &mt_exit_AML_on_tap RCTRL J  &mt_exit_AML_on_tap LALT K    &mt_exit_AML_on_tap RGUI L &mt_exit_AML_on_tap RSHIFT BACKSPACE
+&trans                        &trans    &trans                      &trans    &trans                      &trans  &trans                       &trans                        &trans                     &trans
+&trans                        &trans    &trans                      &trans    &trans  &trans      &trans  &trans                                                             &trans
             >;
         };
 
